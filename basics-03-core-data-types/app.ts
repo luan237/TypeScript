@@ -1,15 +1,17 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
-  const result = n1 + n2;
-  if (showResult) {
-    console.log(phrase + result);
-  } else {
-    return result;
-  }
+function add(n1: number, n2: number) {
+  return n1 + n2;
 }
 
-const number1 = 5; // 5.0
-const number2 = 2.8;
-const printResult = true;
-const resultPhrase = 'Result is: ';
+function printResult(num: number): void {
+  console.log("Result: " + num);
+}
 
-add(number1, number2, printResult, resultPhrase);
+printResult(add(5, 12));
+
+let combineValues: (a: number, b: number) => number;
+
+combineValues = add;
+// combineValues = printResult;
+// combineValues = 5;
+
+console.log(combineValues(8, 8));
